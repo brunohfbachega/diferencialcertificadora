@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Digital Certificadora" },
+      { name: "description", content: "Digital Trust Landing creates a lead generation page for a digital certification company." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Digital Certificadora" },
+      { property: "og:description", content: "Digital Trust Landing creates a lead generation page for a digital certification company." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Digital Certificadora" },
+      { name: "twitter:description", content: "Digital Trust Landing creates a lead generation page for a digital certification company." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0c9e2b4d-4fec-49ad-8a2e-d3edc727abc9/id-preview-e1abb9a2--3d256697-cd07-4f17-8aa3-4c1854d3f792.lovable.app-1782134593573.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0c9e2b4d-4fec-49ad-8a2e-d3edc727abc9/id-preview-e1abb9a2--3d256697-cd07-4f17-8aa3-4c1854d3f792.lovable.app-1782134593573.png" },
     ],
     links: [
       {
