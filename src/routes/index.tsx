@@ -23,6 +23,8 @@ import {
   MapPin,
 } from "lucide-react";
 import heroImg from "@/assets/hero-certificado.jpg";
+import logoAsset from "@/assets/logo-diferencial.webp.asset.json";
+const logoUrl = logoAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -67,20 +69,15 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-2">
-          <div
-            className="flex h-9 w-9 items-center justify-center rounded-lg text-primary-foreground"
-            style={{ background: "var(--gradient-brand)" }}
-          >
-            <FileSignature className="h-5 w-5" />
-          </div>
+        <a href="/" className="flex items-center gap-3">
+          <img src={logoUrl} alt="Diferencial Certificado Digital" width={40} height={40} className="h-10 w-10 rounded-lg object-contain" />
           <div className="leading-tight">
             <p className="text-sm font-bold tracking-tight">DIFERENCIAL</p>
             <p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
               Certificado Digital
             </p>
           </div>
-        </div>
+        </a>
         <a
           href={WHATSAPP}
           target="_blank"
@@ -458,19 +455,19 @@ function Confianca() {
 function Depoimentos() {
   const testimonials = [
     {
-      name: "Carla M.",
-      role: "Contadora",
-      text: "Atendimento impecável e muito rápido! Resolveram em uma manhã o que outra empresa levou dias.",
+      name: "Júlia Da Silva Vargas",
+      role: "Avaliação Google · 5 avaliações",
+      text: "Ótimo lugar, muito bom o atendimento, rápido e organizado, no que precisar eles estão a disposição, super recomendo.",
     },
     {
-      name: "Rafael S.",
-      role: "Empresário",
-      text: "Recomendo, fizeram toda a instalação remota sem complicação. Suporte humano faz toda a diferença.",
+      name: "Bete Novaes",
+      role: "Local Guide · 24 avaliações",
+      text: "O atendimento na Diferencial mostra sua essência em um atendimento que acolhe e resolve o necessário para a emissão do certificado digital. Recomendo muito!",
     },
     {
-      name: "Juliana P.",
-      role: "Advogada",
-      text: "Empresa séria e confiável. Processo claro, seguro e com gente que conhece o assunto.",
+      name: "Marina Rover",
+      role: "Local Guide · 9 avaliações",
+      text: "Atendimento de qualidade, rapidez e agilidade!",
     },
   ];
 
@@ -628,13 +625,8 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2">
-              <div
-                className="flex h-9 w-9 items-center justify-center rounded-lg text-primary-foreground"
-                style={{ background: "var(--gradient-brand)" }}
-              >
-                <FileSignature className="h-5 w-5" />
-              </div>
+            <div className="flex items-center gap-3">
+              <img src={logoUrl} alt="Diferencial Certificado Digital" width={40} height={40} className="h-10 w-10 rounded-lg object-contain" />
               <div className="leading-tight">
                 <p className="text-sm font-bold tracking-tight">DIFERENCIAL</p>
                 <p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
