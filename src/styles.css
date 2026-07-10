@@ -87,6 +87,11 @@
   --gradient-soft: linear-gradient(135deg, oklch(0.98 0.02 320), oklch(0.96 0.04 340));
   --shadow-brand: 0 20px 50px -20px oklch(0.45 0.20 320 / 0.45);
   --shadow-soft: 0 10px 30px -15px oklch(0.45 0.20 320 / 0.20);
+  --gradient-institutional:
+    radial-gradient(1200px 600px at 85% -10%, oklch(0.95 0.05 330 / 0.55), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, oklch(0.96 0.04 320 / 0.5), transparent 60%),
+    radial-gradient(1000px 700px at 50% 110%, oklch(0.95 0.06 340 / 0.45), transparent 60%),
+    linear-gradient(180deg, #ffffff, #fdfbff 50%, #ffffff);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);

@@ -22,8 +22,10 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import escritorioAsset from "@/assets/escritorio-diferencial.png.asset.json";
+import escritorioAsset from "@/assets/escritorio-diferencial.webp.asset.json";
+import escritorioMobileAsset from "@/assets/escritorio-diferencial-800.webp.asset.json";
 const escritorioUrl = escritorioAsset.url;
+const escritorioMobileUrl = escritorioMobileAsset.url;
 import logoAsset from "@/assets/logo-diferencial.webp.asset.json";
 const logoUrl = logoAsset.url;
 
@@ -43,7 +45,10 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "preload", as: "image", href: escritorioMobileUrl, fetchpriority: "high" } as unknown as { rel: string; href: string },
+    ],
   }),
   component: Landing,
 });
@@ -52,7 +57,10 @@ const WHATSAPP = "https://wa.me/554741010898";
 
 function Landing() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main
+      className="min-h-screen text-foreground"
+      style={{ background: "var(--gradient-institutional)" }}
+    >
       <Header />
       <Atracao />
       <Conexao />
@@ -158,10 +166,15 @@ function Atracao() {
         >
           <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card shadow-[var(--shadow-soft)]">
             <img
-              src={escritorioUrl}
+              src={escritorioMobileUrl}
+              srcSet={`${escritorioMobileUrl} 800w, ${escritorioUrl} 1400w`}
+              sizes="(max-width: 640px) 92vw, (max-width: 1024px) 90vw, 540px"
               alt="Escritório Diferencial Certificado Digital"
-              width={1280}
-              height={1280}
+              width={1254}
+              height={1254}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="aspect-square w-full object-cover"
             />
           </div>
@@ -235,7 +248,7 @@ function Conexao() {
     "Insegurança com sites genéricos e sem suporte real?",
   ];
   return (
-    <section className="border-y border-border bg-background">
+    <section className="border-y border-border bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
@@ -384,7 +397,7 @@ function Confianca() {
   ];
 
   return (
-    <section id="confianca" className="border-y border-border bg-background">
+    <section id="confianca" className="border-y border-border bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
@@ -606,7 +619,7 @@ function Conversao() {
 /* ===================== FOOTER ===================== */
 function Footer() {
   return (
-    <footer id="contato" className="border-t border-border bg-background">
+    <footer id="contato" className="border-t border-border bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr_1fr]">
           <div>
