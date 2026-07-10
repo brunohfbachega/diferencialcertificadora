@@ -22,8 +22,10 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import escritorioAsset from "@/assets/escritorio-diferencial.png.asset.json";
+import escritorioAsset from "@/assets/escritorio-diferencial.webp.asset.json";
+import escritorioMobileAsset from "@/assets/escritorio-diferencial-800.webp.asset.json";
 const escritorioUrl = escritorioAsset.url;
+const escritorioMobileUrl = escritorioMobileAsset.url;
 import logoAsset from "@/assets/logo-diferencial.webp.asset.json";
 const logoUrl = logoAsset.url;
 
