@@ -248,7 +248,7 @@ function Conexao() {
     "Insegurança com sites genéricos e sem suporte real?",
   ];
   return (
-    <section className="border-y border-border bg-background">
+    <section className="border-y border-border bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
@@ -397,7 +397,7 @@ function Confianca() {
   ];
 
   return (
-    <section id="confianca" className="border-y border-border bg-background">
+    <section id="confianca" className="border-y border-border bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
@@ -619,7 +619,7 @@ function Conversao() {
 /* ===================== FOOTER ===================== */
 function Footer() {
   return (
-    <footer id="contato" className="border-t border-border bg-background">
+    <footer id="contato" className="border-t border-border bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr_1fr]">
           <div>
