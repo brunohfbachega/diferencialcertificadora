@@ -22,7 +22,8 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import heroImg from "@/assets/hero-certificado.jpg";
+import escritorioAsset from "@/assets/escritorio-diferencial.png.asset.json";
+const escritorioUrl = escritorioAsset.url;
 import logoAsset from "@/assets/logo-diferencial.webp.asset.json";
 const logoUrl = logoAsset.url;
 
