@@ -83,7 +83,7 @@ function Header() {
           href={WHATSAPP}
           target="_blank"
           rel="noreferrer"
-          className="hidden items-center gap-2 rounded-none px-5 py-2 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:scale-[1.02] sm:inline-flex"
+          className="hidden items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:scale-[1.02] sm:inline-flex"
           style={{ background: "var(--gradient-brand)" }}
         >
           <MessageCircle className="h-4 w-4" /> Falar agora
@@ -129,7 +129,7 @@ function Atracao() {
               href={WHATSAPP}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-none px-7 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.03]"
+              className="group inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.03]"
               style={{ background: "var(--gradient-brand)" }}
             >
               Quero emitir meu certificado
@@ -137,7 +137,7 @@ function Atracao() {
             </a>
             <a
               href="#confianca"
-              className="inline-flex items-center gap-2 rounded-none border border-border px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
             >
               Como funciona
             </a>
@@ -566,13 +566,13 @@ function Conversao() {
                 href={WHATSAPP}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-none bg-white px-7 py-4 text-sm font-bold text-primary transition-transform hover:scale-[1.03]"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-primary transition-transform hover:scale-[1.03]"
               >
                 <MessageCircle className="h-4 w-4" /> Chamar no WhatsApp
               </a>
               <a
                 href="tel:+554741010898"
-                className="inline-flex items-center gap-2 rounded-none border border-white/40 px-7 py-4 text-sm font-bold text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-4 text-sm font-bold text-white transition-colors hover:bg-white/10"
               >
                 <Phone className="h-4 w-4" /> (47) 4101-0898
               </a>
@@ -689,7 +689,7 @@ function Footer() {
               href={WHATSAPP}
               target="_blank"
               rel="noreferrer"
-              className="mt-5 inline-flex items-center justify-center gap-2 rounded-none px-6 py-3 text-sm font-bold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:scale-[1.02]"
+              className="mt-5 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:scale-[1.02]"
               style={{ background: "var(--gradient-brand)" }}
             >
               <MessageCircle className="h-4 w-4" /> Chamar no WhatsApp
@@ -719,7 +719,7 @@ function FloatingWhatsApp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chamar no WhatsApp"
-      className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-none px-5 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.05]"
+      className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full px-5 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.05]"
       style={{ background: "var(--gradient-brand)" }}
     >
       <MessageCircle className="h-5 w-5" />
