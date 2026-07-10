@@ -97,14 +97,6 @@ function Header() {
 function Atracao() {
   return (
     <section className="relative overflow-hidden">
-      <div
-        className="pointer-events-none absolute -right-32 -top-32 h-[520px] w-[520px] rounded-full opacity-30 blur-3xl"
-        style={{ background: "var(--gradient-brand)" }}
-      />
-      <div
-        className="pointer-events-none absolute -left-40 top-40 h-[420px] w-[420px] rounded-full opacity-20 blur-3xl"
-        style={{ background: "var(--gradient-soft)" }}
-      />
 
       <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:pt-20">
         <motion.div
@@ -164,11 +156,7 @@ function Atracao() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="relative"
         >
-          <div
-            className="absolute -inset-6 rounded-[2rem] opacity-30 blur-2xl"
-            style={{ background: "var(--gradient-brand)" }}
-          />
-          <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card shadow-[var(--shadow-brand)]">
+          <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card shadow-[var(--shadow-soft)]">
             <img
               src={escritorioUrl}
               alt="Escritório Diferencial Certificado Digital"
@@ -247,7 +235,7 @@ function Conexao() {
     "Insegurança com sites genéricos e sem suporte real?",
   ];
   return (
-    <section className="border-y border-border bg-secondary/60">
+    <section className="border-y border-border bg-background">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
@@ -396,7 +384,7 @@ function Confianca() {
   ];
 
   return (
-    <section id="confianca" className="border-y border-border bg-secondary/40">
+    <section id="confianca" className="border-y border-border bg-background">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
@@ -527,10 +515,6 @@ function ProductCard({
 }) {
   return (
     <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
-      <div
-        className="absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-15 blur-2xl"
-        style={{ background: "var(--gradient-brand)" }}
-      />
       <div className="relative">
         <div className="flex items-center gap-3">
           <div
@@ -622,7 +606,7 @@ function Conversao() {
 /* ===================== FOOTER ===================== */
 function Footer() {
   return (
-    <footer id="contato" className="border-t border-border bg-secondary/40">
+    <footer id="contato" className="border-t border-border bg-background">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr_1fr]">
           <div>
