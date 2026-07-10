@@ -22,7 +22,8 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import heroImg from "@/assets/hero-certificado.jpg";
+import escritorioAsset from "@/assets/escritorio-diferencial.png.asset.json";
+const escritorioUrl = escritorioAsset.url;
 import logoAsset from "@/assets/logo-diferencial.webp.asset.json";
 const logoUrl = logoAsset.url;
 
@@ -169,8 +170,8 @@ function Atracao() {
           />
           <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card shadow-[var(--shadow-brand)]">
             <img
-              src={heroImg}
-              alt="Profissional segurando smartphone com escudo de segurança digital"
+              src={escritorioUrl}
+              alt="Escritório Diferencial Certificado Digital"
               width={1280}
               height={1280}
               className="aspect-square w-full object-cover"
