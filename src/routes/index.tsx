@@ -14,7 +14,6 @@ import {
   MessageCircle,
   Building2,
   User,
-  Sparkles,
   Video,
   Headphones,
   RefreshCw,
@@ -120,7 +119,7 @@ function Atracao() {
           className="flex flex-col justify-center"
         >
           <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-secondary px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-            <Sparkles className="h-3.5 w-3.5" /> Certificadora Digital Autorizada
+            Certificadora Digital Autorizada
           </span>
           <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
             Seu Certificado Digital{" "}
