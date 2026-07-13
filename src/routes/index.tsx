@@ -69,6 +69,8 @@ function Landing() {
       <Atracao />
       <Conexao />
       <Diferenciais />
+      <QuemSomos />
+      <ParceriaContabil />
       <Confianca />
       <Depoimentos />
       <Conversao />
