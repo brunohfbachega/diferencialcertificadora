@@ -36,16 +36,16 @@ const logoUrl = logoAsset.url;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Diferencial Certificado Digital — Emissão rápida, segura e sem burocracia" },
+      { title: "Diferencial Certificado Digital — Emissão rápida, segura e sem burocracia | Parceria Contábil" },
       {
         name: "description",
         content:
-          "Certificados Digitais A1 e A3 com atendimento personalizado. Emissão rápida, segura e sem complicação para sua empresa e CPF.",
+          "Certificados Digitais A1 e A3 com atendimento personalizado. Emissão rápida, segura e sem complicação para sua empresa e CPF. Contabilidades: seja parceira e ganhe comissão por indicação.",
       },
-      { property: "og:title", content: "Diferencial Certificado Digital" },
+      { property: "og:title", content: "Diferencial Certificado Digital — Parceria Contábil" },
       {
         property: "og:description",
-        content: "Certificados A1 e A3 com emissão rápida, segura e atendimento humanizado.",
+        content: "Certificados A1 e A3 com emissão rápida, segura e atendimento humanizado. Programa de parceria para contabilidades com comissão por indicação.",
       },
       { property: "og:url", content: "/" },
     ],
