@@ -14,7 +14,6 @@ import {
   MessageCircle,
   Building2,
   User,
-  Sparkles,
   Video,
   Headphones,
   RefreshCw,
