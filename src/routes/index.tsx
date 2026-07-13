@@ -21,6 +21,10 @@ import {
   Users,
   Mail,
   MapPin,
+  Target,
+  Eye,
+  Award,
+  Percent,
 } from "lucide-react";
 import escritorioAsset from "@/assets/escritorio-diferencial.webp.asset.json";
 import escritorioMobileAsset from "@/assets/escritorio-diferencial-800.webp.asset.json";
