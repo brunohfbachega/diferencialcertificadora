@@ -382,6 +382,149 @@ function Diferenciais() {
   );
 }
 
+/* ===================== QUEM SOMOS ===================== */
+function QuemSomos() {
+  const pilares = [
+    {
+      icon: <Target className="h-5 w-5" />,
+      title: "Missão",
+      text: "Oferecer soluções em certificação digital com segurança, agilidade e excelência, simplificando processos e contribuindo para a transformação digital de nossos clientes.",
+    },
+    {
+      icon: <Eye className="h-5 w-5" />,
+      title: "Visão",
+      text: "Ser referência nacional em certificação digital, reconhecida pela inovação, qualidade dos serviços e excelência no atendimento.",
+    },
+    {
+      icon: <Award className="h-5 w-5" />,
+      title: "Valores",
+      text: "Ética e transparência; compromisso com o cliente; segurança e confiabilidade; agilidade e eficiência; inovação e melhoria contínua; respeito às pessoas e relações; excelência na prestação de serviços.",
+    },
+  ];
+
+  return (
+    <section id="quem-somos" className="border-y border-border bg-transparent">
+      <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="grid items-start gap-12 lg:grid-cols-2">
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              Quem Somos
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl">
+              A Diferencial Certificado Digital
+            </h2>
+            <p className="mt-4 text-base text-muted-foreground">
+              Somos uma empresa especializada em soluções de certificação digital, com sede em
+              Joinville/SC e atendimento em todo o Brasil. Oferecemos emissão, renovação e gestão
+              de certificados digitais para empresas, profissionais liberais e pessoas físicas.
+            </p>
+            <p className="mt-4 text-base text-muted-foreground">
+              Nosso diferencial está na combinação de tecnologia, atendimento personalizado e
+              processos simplificados, proporcionando uma experiência rápida, segura e confiável para
+              nossos clientes.
+            </p>
+          </div>
+
+          <div className="grid gap-5">
+            {pilares.map((p) => (
+              <div
+                key={p.title}
+                className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]"
+              >
+                <div className="flex items-center gap-3">
+                  <div
+                    className="flex h-10 w-10 items-center justify-center rounded-xl text-primary-foreground"
+                    style={{ background: "var(--gradient-brand)" }}
+                  >
+                    {p.icon}
+                  </div>
+                  <h3 className="text-lg font-bold">{p.title}</h3>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ===================== PARCERIA CONTÁBIL ===================== */
+function ParceriaContabil() {
+  const benefits = [
+    {
+      icon: <Percent className="h-5 w-5" />,
+      title: "Comissão por indicação",
+      text: "Indique certificados digitais para seus clientes e receba comissão por cada emissão concretizada.",
+    },
+    {
+      icon: <Users className="h-5 w-5" />,
+      title: "Atendimento exclusivo",
+      text: "Seus clientes são atendidos por nossa equipe especializada, com suporte antes e depois da emissão.",
+    },
+    {
+      icon: <Zap className="h-5 w-5" />,
+      title: "Processo simplificado",
+      text: "Emissão rápida, presencial ou por videoconferência, para você não perder tempo com burocracia.",
+    },
+  ];
+
+  return (
+    <section id="parceria-contabil" className="mx-auto max-w-6xl px-6 py-24">
+      <div className="grid items-center gap-10 overflow-hidden rounded-[2.5rem] border border-border bg-card p-8 shadow-[var(--shadow-soft)] lg:grid-cols-2 lg:p-12">
+        <div>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            Para Contabilidades
+          </p>
+          <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl">
+            Parceria Contábil
+          </h2>
+          <p className="mt-4 text-base text-muted-foreground">
+            Se você é contador ou gestor de uma escritória contábil, seja nosso parceiro. Indique
+            os certificados digitais A1 e A3 da Diferencial para seus clientes e ofereça mais
+            praticidade e segurança ao rotineiro fiscal e trabalhista deles.
+          </p>
+          <p className="mt-4 text-base text-muted-foreground">
+            Você ganha com comissão por cada emissão, seus clientes ganham atendimento humano e
+            especializado, e ainda contam com suporte técnico antes e depois da instalação.
+          </p>
+          <a
+            href={WHATSAPP}
+            target="_blank"
+            rel="noreferrer"
+            className="group mt-7 inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:scale-[1.03]"
+            style={{ background: "var(--gradient-brand)" }}
+          >
+            Quero ser parceiro
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </a>
+        </div>
+
+        <div className="grid gap-5">
+          {benefits.map((b) => (
+            <div
+              key={b.title}
+              className="flex items-start gap-4 rounded-2xl border border-border bg-background p-5"
+            >
+              <div
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-primary-foreground"
+                style={{ background: "var(--gradient-brand)" }}
+              >
+                {b.icon}
+              </div>
+              <div>
+                <h3 className="text-base font-bold">{b.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{b.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ===================== CONFIANÇA ===================== */
 function Confianca() {
   const steps = [
