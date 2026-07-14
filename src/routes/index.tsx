@@ -24,7 +24,39 @@ import {
   Eye,
   Award,
   Percent,
+  AlertCircle,
+  BadgeCheck,
+  Rocket,
+  Handshake,
+  TrendingUp,
 } from "lucide-react";
+
+/* Ícone oficial do WhatsApp (SVG inline) — usado nos CTAs */
+function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      className={className}
+      fill="currentColor"
+    >
+      <path d="M19.11 17.24c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.51l-.56-.01a1.07 1.07 0 0 0-.78.37c-.27.3-1.02 1-1.02 2.43 0 1.44 1.05 2.83 1.19 3.02.15.2 2.07 3.15 5.01 4.42 1.87.8 2.6.87 3.53.73.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z" />
+      <path d="M26.65 5.34A15.9 15.9 0 0 0 15.99 1C7.16 1 0 8.16 0 16.99a15.9 15.9 0 0 0 2.13 7.99L0 32l7.19-2.09a15.94 15.94 0 0 0 8.8 2.64h.01c8.83 0 15.99-7.16 16-15.99a15.9 15.9 0 0 0-5.35-11.22zM16 29.86h-.01a13.2 13.2 0 0 1-6.73-1.84l-.48-.29-4.27 1.24 1.27-4.16-.31-.5A13.2 13.2 0 0 1 2.86 17c0-7.24 5.9-13.14 13.14-13.14 3.51 0 6.81 1.37 9.29 3.85a13.05 13.05 0 0 1 3.85 9.28c0 7.24-5.9 13.14-13.14 13.14z" />
+    </svg>
+  );
+}
+
+/* Badge Google (usado nos cards de depoimento) */
+function GoogleBadge({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" aria-hidden="true" className={className}>
+      <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.1 29.5 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z" />
+      <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.1 29.5 4 24 4 16.3 4 9.7 8.4 6.3 14.7z" />
+      <path fill="#4CAF50" d="M24 44c5.4 0 10.3-2.1 14-5.5l-6.5-5.3C29.5 34.6 26.9 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.5 16.2 44 24 44z" />
+      <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.4-2.4 4.4-4.5 5.7l6.5 5.3C41.9 35.4 44 30 44 24c0-1.3-.1-2.4-.4-3.5z" />
+    </svg>
+  );
+}
 import escritorioAsset from "@/assets/escritorio-diferencial.webp.asset.json";
 import escritorioMobileAsset from "@/assets/escritorio-diferencial-800.webp.asset.json";
 const escritorioUrl = escritorioAsset.url;
