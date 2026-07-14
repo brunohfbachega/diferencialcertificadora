@@ -11,7 +11,7 @@ import {
   Star,
   ArrowRight,
   Phone,
-  MessageCircle,
+  
   Building2,
   User,
   Video,
