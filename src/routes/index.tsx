@@ -678,7 +678,7 @@ function ParceriaContabil() {
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-primary transition-transform hover:scale-[1.03]"
           >
-            <MessageCircle className="h-4 w-4" /> Quero ser parceiro agora
+            <WhatsAppIcon className="h-4 w-4" /> Quero ser parceiro agora
           </a>
           <a
             href="tel:+554741010898"
@@ -696,7 +696,7 @@ function ParceriaContabil() {
 function Confianca() {
   const steps = [
     {
-      icon: <MessageCircle className="h-5 w-5" />,
+      icon: <WhatsAppIcon className="h-5 w-5" />,
       title: "1. Fale com a gente",
       text: "Atendimento humano via WhatsApp para entender qual certificado você precisa.",
     },
@@ -897,7 +897,7 @@ function Conversao() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-primary transition-transform hover:scale-[1.03]"
               >
-                <MessageCircle className="h-4 w-4" /> Chamar no WhatsApp
+                <WhatsAppIcon className="h-4 w-4" /> Chamar no WhatsApp
               </a>
               <a
                 href="tel:+554741010898"
@@ -1021,7 +1021,7 @@ function Footer() {
               className="mt-5 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:scale-[1.02]"
               style={{ background: "var(--gradient-brand)" }}
             >
-              <MessageCircle className="h-4 w-4" /> Chamar no WhatsApp
+              <WhatsAppIcon className="h-4 w-4" /> Chamar no WhatsApp
             </a>
           </div>
         </div>
@@ -1051,7 +1051,7 @@ function FloatingWhatsApp() {
       className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full px-5 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.05]"
       style={{ background: "var(--gradient-brand)" }}
     >
-      <MessageCircle className="h-5 w-5" />
+      <WhatsAppIcon className="h-5 w-5" />
       <span className="hidden sm:inline">Fale no WhatsApp</span>
     </a>
   );
