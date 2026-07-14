@@ -25,10 +25,6 @@ import {
   Award,
   Percent,
   AlertCircle,
-  BadgeCheck,
-  Rocket,
-  Handshake,
-  TrendingUp,
 } from "lucide-react";
 
 /* Ícone oficial do WhatsApp (SVG inline) — usado nos CTAs */
