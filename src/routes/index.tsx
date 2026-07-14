@@ -131,7 +131,7 @@ function Header() {
           className="hidden items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:scale-[1.02] sm:inline-flex"
           style={{ background: "var(--gradient-brand)" }}
         >
-          <MessageCircle className="h-4 w-4" /> Falar agora
+          <WhatsAppIcon className="h-4 w-4" /> Falar agora
         </a>
       </div>
     </header>
