@@ -813,11 +813,16 @@ function Depoimentos() {
             </div>
             <p className="text-sm leading-relaxed text-foreground/90">"{t.text}"</p>
             <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
-              <div
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-primary-foreground"
-                style={{ background: "var(--gradient-brand)" }}
-              >
-                {t.name.charAt(0)}
+              <div className="relative shrink-0">
+                <div
+                  className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-primary-foreground"
+                  style={{ background: "var(--gradient-brand)" }}
+                >
+                  {t.name.charAt(0)}
+                </div>
+                <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-card bg-background">
+                  <GoogleBadge className="h-3 w-3" />
+                </span>
               </div>
               <div className="min-w-0">
                 <p className="truncate text-sm font-bold">{t.name}</p>
