@@ -312,7 +312,7 @@ function Conexao() {
                   className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-primary-foreground"
                   style={{ background: "var(--gradient-brand)" }}
                 >
-                  <CheckCircle2 className="h-4 w-4" />
+                  <AlertCircle className="h-4 w-4" />
                 </span>
                 <span className="text-sm font-medium">{p}</span>
               </li>
