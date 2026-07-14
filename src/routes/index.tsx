@@ -401,48 +401,127 @@ function QuemSomos() {
     },
   ];
 
+  const stats = [
+    { icon: <Users className="h-6 w-6" />, value: "+5.000", label: "clientes atendidos" },
+    { icon: <Clock className="h-6 w-6" />, value: "10 anos", label: "no mercado" },
+    { icon: <MapPin className="h-6 w-6" />, value: "Atuação", label: "nacional" },
+    { icon: <ShieldCheck className="h-6 w-6" />, value: "ICP-Brasil", label: "autorizada" },
+  ];
+
   return (
     <section id="quem-somos" className="border-y border-border bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-24">
-        <div className="grid items-start gap-12 lg:grid-cols-2">
-          <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              Quem Somos
-            </p>
-            <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl">
-              A Diferencial Certificado Digital
-            </h2>
-            <p className="mt-4 text-base text-muted-foreground">
-              Somos uma empresa especializada em soluções de certificação digital, com sede em
-              Joinville/SC e atendimento em todo o Brasil. Oferecemos emissão, renovação e gestão
-              de certificados digitais para empresas, profissionais liberais e pessoas físicas.
-            </p>
-            <p className="mt-4 text-base text-muted-foreground">
-              Nosso diferencial está na combinação de tecnologia, atendimento personalizado e
-              processos simplificados, proporcionando uma experiência rápida, segura e confiável para
-              nossos clientes.
-            </p>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          {/* Foto */}
+          <div className="relative">
+            <div className="overflow-hidden rounded-[2rem] border border-border shadow-[var(--shadow-soft)]">
+              <img
+                src={escritorioUrl}
+                srcSet={`${escritorioMobileUrl} 800w, ${escritorioUrl} 1600w`}
+                sizes="(max-width: 1024px) 100vw, 560px"
+                alt="Escritório da Diferencial Certificado Digital em Joinville/SC"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
 
-          <div className="grid gap-5">
-            {pilares.map((p) => (
+          {/* Texto */}
+          <div>
+            <h2 className="text-4xl font-extrabold leading-tight sm:text-5xl">
+              Conheça a{" "}
+              <span className="inline-flex items-center gap-2 align-middle">
+                <img src={logoUrl} alt="Diferencial" className="inline-block h-10 w-auto sm:h-12" />
+              </span>
+            </h2>
+
+            <p className="mt-6 text-base font-semibold text-foreground">
+              A certificadora que já emitiu milhares de certificados digitais no Brasil{" "}
+              <span className="font-normal text-muted-foreground">
+                com atendimento humano, rápido e seguro.
+              </span>
+            </p>
+
+            <p className="mt-4 text-base text-muted-foreground">
+              Com sede em Joinville/SC e atendimento em todo o Brasil, a Diferencial nasceu para
+              romper com a burocracia da certificação digital e oferecer uma experiência simples,
+              próxima e confiável.
+            </p>
+
+            <p className="mt-4 text-base text-muted-foreground">
+              Emitimos, renovamos e gerenciamos certificados A1 e A3 para empresas, profissionais
+              liberais e pessoas físicas, combinando tecnologia, atendimento personalizado e
+              processos simplificados.
+            </p>
+
+            <p className="mt-4 text-base text-muted-foreground">
+              Nosso propósito é claro: descomplicar a certificação digital e contribuir para a
+              transformação digital de cada cliente — do escritório contábil ao autônomo.
+            </p>
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="mt-14 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              className="flex flex-col items-center justify-center rounded-2xl border border-border bg-card px-4 py-6 text-center shadow-[var(--shadow-soft)]"
+            >
               <div
-                key={p.title}
-                className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]"
+                className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl text-primary-foreground"
+                style={{ background: "var(--gradient-brand)" }}
               >
-                <div className="flex items-center gap-3">
-                  <div
-                    className="flex h-10 w-10 items-center justify-center rounded-xl text-primary-foreground"
-                    style={{ background: "var(--gradient-brand)" }}
-                  >
-                    {p.icon}
-                  </div>
-                  <h3 className="text-lg font-bold">{p.title}</h3>
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+                {s.icon}
               </div>
+              <div className="text-xl font-extrabold sm:text-2xl">{s.value}</div>
+              <div className="mt-1 text-sm text-muted-foreground">{s.label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <a
+            href={WHATSAPP}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full px-9 py-4 text-sm font-bold uppercase tracking-wide text-primary-foreground shadow-[var(--shadow-soft)] transition-transform hover:scale-[1.03]"
+            style={{ background: "var(--gradient-brand)" }}
+          >
+            Fale com a Diferencial
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
+            {["ICP-Brasil", "Atendimento humano", "Presencial ou online", "Suporte especializado"].map((t) => (
+              <span key={t} className="inline-flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
+                {t}
+              </span>
             ))}
           </div>
+        </div>
+
+        {/* Missão, Visão, Valores */}
+        <div className="mt-16 grid gap-5 md:grid-cols-3">
+          {pilares.map((p) => (
+            <div
+              key={p.title}
+              className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]"
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  className="flex h-10 w-10 items-center justify-center rounded-xl text-primary-foreground"
+                  style={{ background: "var(--gradient-brand)" }}
+                >
+                  {p.icon}
+                </div>
+                <h3 className="text-lg font-bold">{p.title}</h3>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
