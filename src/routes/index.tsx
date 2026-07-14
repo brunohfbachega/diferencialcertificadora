@@ -1053,8 +1053,7 @@ function FloatingWhatsApp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chamar no WhatsApp"
-      className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full px-5 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.05]"
-      style={{ background: "var(--gradient-brand)" }}
+      className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-4 text-sm font-bold text-white shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.05]"
     >
       <WhatsAppIcon className="h-5 w-5" />
       <span className="hidden sm:inline">Fale no WhatsApp</span>
