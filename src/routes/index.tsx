@@ -458,10 +458,7 @@ function QuemSomos() {
           {/* Texto */}
           <div>
             <h2 className="text-4xl font-extrabold leading-tight sm:text-5xl">
-              Conheça a{" "}
-              <span className="inline-flex items-center gap-2 align-middle">
-                <img src={logoUrl} alt="Diferencial" className="inline-block h-10 w-auto sm:h-12" />
-              </span>
+              Conheça a Diferencial<br />Certificadora Digital
             </h2>
 
             <p className="mt-6 text-base font-semibold text-foreground">
