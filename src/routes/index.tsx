@@ -730,9 +730,12 @@ function Confianca() {
   ];
 
   return (
-    <section id="confianca" className="border-y border-border bg-transparent">
+    <section id="emissao" className="border-y border-border bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="text-center">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary/80">
+            Emissão de certificado avulso
+          </p>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
             Como funciona
           </p>
