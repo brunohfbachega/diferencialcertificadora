@@ -165,33 +165,24 @@ function Atracao() {
             ou CPF.
           </p>
 
-          <div className="mt-8">
-            <img
-              src={logoUrl}
-              alt="Diferencial Certificado Digital"
-              width={120}
-              height={120}
-              className="mx-auto h-20 w-auto object-contain sm:h-24"
-            />
-            <p className="mt-6 text-center text-sm font-semibold text-muted-foreground">
-              Você é:
-            </p>
-            <div className="mt-3 flex flex-col items-center gap-3 sm:flex-row sm:justify-start">
-              <a
-                href="#emissao"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.03] sm:w-auto"
-                style={{ background: "var(--gradient-brand)" }}
-              >
-                Quero emitir meu certificado
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-              <a
-                href="#parceria-contabil"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-secondary sm:w-auto"
-              >
-                Sou contador, quero ser parceiro
-              </a>
-            </div>
+          <p className="mt-8 text-sm font-semibold text-muted-foreground">
+            Você é:
+          </p>
+          <div className="mt-3 flex flex-col items-center gap-3 sm:flex-row sm:justify-start">
+            <a
+              href="#emissao"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.03] sm:w-auto"
+              style={{ background: "var(--gradient-brand)" }}
+            >
+              Quero emitir meu certificado
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#parceria-contabil"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-secondary sm:w-auto"
+            >
+              Sou contador, quero ser parceiro
+            </a>
           </div>
 
           <div className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
@@ -610,6 +601,9 @@ function ParceriaContabil() {
     <section id="parceria-contabil" className="mx-auto max-w-6xl px-6 py-24">
       <div className="grid items-center gap-10 overflow-hidden rounded-[2.5rem] border border-border bg-card p-8 shadow-[var(--shadow-soft)] lg:grid-cols-2 lg:p-12">
         <div>
+          <span className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-sm">
+            ÁREA EXCLUSIVA PARA CONTADORES
+          </span>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
             Para Contabilidades
           </p>
@@ -739,9 +733,12 @@ function Confianca() {
   ];
 
   return (
-    <section id="confianca" className="border-y border-border bg-transparent">
+    <section id="emissao" className="border-y border-border bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="text-center">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary/80">
+            Emissão de certificado avulso
+          </p>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
             Como funciona
           </p>
@@ -906,12 +903,13 @@ function Conversao() {
   return (
     <section className="relative px-6 pb-24">
       <div
-        className="mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] p-10 text-primary-foreground shadow-[var(--shadow-brand)] sm:p-16"
+        className="mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] p-10 text-primary-foreground shadow-[var(--shadow-brand)] sm:p-12"
         style={{ background: "var(--gradient-brand)" }}
       >
-        <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider backdrop-blur">
+        <div className="grid gap-10 lg:grid-cols-2">
+          {/* Coluna esquerda — emissão */}
+          <div className="flex flex-col">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider backdrop-blur">
               <Clock className="h-3.5 w-3.5" /> Atendimento em minutos
             </span>
             <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl">
@@ -921,42 +919,63 @@ function Conversao() {
               Fale agora com um especialista da Diferencial pelo WhatsApp e tenha seu certificado
               hoje mesmo.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href={WHATSAPP}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-primary transition-transform hover:scale-[1.03]"
-              >
-                <WhatsAppIcon className="h-4 w-4" /> Chamar no WhatsApp
-              </a>
-              <a
-                href="tel:+554741010898"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-4 text-sm font-bold text-white transition-colors hover:bg-white/10"
-              >
-                <Phone className="h-4 w-4" /> (47) 4101-0898
-              </a>
-            </div>
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-primary transition-transform hover:scale-[1.03]"
+            >
+              <WhatsAppIcon className="h-4 w-4" /> Chamar no WhatsApp
+            </a>
+            <ul className="mt-8 space-y-3">
+              {[
+                { icon: <Zap className="h-4 w-4" />, t: "Emissão rápida e segura" },
+                { icon: <HeartHandshake className="h-4 w-4" />, t: "Atendimento personalizado" },
+                { icon: <Lock className="h-4 w-4" />, t: "100% válido em ICP-Brasil" },
+                { icon: <ShieldCheck className="h-4 w-4" />, t: "Suporte humano de verdade" },
+              ].map((b) => (
+                <li
+                  key={b.t}
+                  className="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3 backdrop-blur"
+                >
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-primary">
+                    {b.icon}
+                  </span>
+                  <span className="text-sm font-semibold">{b.t}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <ul className="space-y-3">
-            {[
-              { icon: <Zap className="h-4 w-4" />, t: "Emissão rápida e segura" },
-              { icon: <HeartHandshake className="h-4 w-4" />, t: "Atendimento personalizado" },
-              { icon: <Lock className="h-4 w-4" />, t: "100% válido em ICP-Brasil" },
-              { icon: <ShieldCheck className="h-4 w-4" />, t: "Suporte humano de verdade" },
-            ].map((b) => (
-              <li
-                key={b.t}
-                className="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3 backdrop-blur"
-              >
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-primary">
-                  {b.icon}
-                </span>
-                <span className="text-sm font-semibold">{b.t}</span>
-              </li>
-            ))}
-          </ul>
+          {/* Coluna direita — parceria */}
+          <div className="flex flex-col justify-center rounded-[2rem] border border-white/20 bg-white/10 p-8 backdrop-blur">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider backdrop-blur">
+              <Percent className="h-3.5 w-3.5" /> Programa de Parceria Contábil
+            </span>
+            <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl">
+              É contador? Vire parceiro e gere nova receita.
+            </h2>
+            <p className="mt-4 text-white/85">
+              Indique certificados digitais para os seus clientes e ganhe comissão por cada emissão.
+              Atendimento especializado e processo simplificado.
+            </p>
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-primary transition-transform hover:scale-[1.03]"
+            >
+              <WhatsAppIcon className="h-4 w-4" /> Quero ser parceiro
+            </a>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/30 px-3 py-1.5 text-xs font-semibold text-white">
+                <Percent className="h-3.5 w-3.5" /> Comissão por indicação
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/30 px-3 py-1.5 text-xs font-semibold text-white">
+                <Users className="h-3.5 w-3.5" /> Atendimento exclusivo
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
