@@ -199,6 +199,23 @@ function Atracao() {
             <Metric value="100%" label="seguro e válido" />
             <Metric value="24h" label="emissão expressa" />
           </div>
+
+          <div className="mt-6 flex max-w-lg items-center justify-center gap-3 rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-soft)]">
+            <div
+              className="flex h-12 w-12 items-center justify-center rounded-xl text-primary-foreground"
+              style={{ background: "var(--gradient-brand)" }}
+            >
+              <Users className="h-6 w-6" />
+            </div>
+            <div>
+              <p className="text-2xl font-extrabold tracking-tight" style={{ color: "var(--primary)" }}>
+                +5.000
+              </p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                clientes atendidos
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
