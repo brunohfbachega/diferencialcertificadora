@@ -458,7 +458,13 @@ function QuemSomos() {
           {/* Texto */}
           <div>
             <h2 className="text-4xl font-extrabold leading-tight sm:text-5xl">
-              Conheça a Diferencial<br />Certificadora Digital
+              Conheça a Diferencial<br />
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: "var(--gradient-brand)" }}
+              >
+                Certificadora Digital
+              </span>
             </h2>
 
             <p className="mt-6 text-base font-semibold text-foreground">
