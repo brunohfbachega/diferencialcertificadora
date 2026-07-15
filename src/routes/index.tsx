@@ -165,33 +165,24 @@ function Atracao() {
             ou CPF.
           </p>
 
-          <div className="mt-8">
-            <img
-              src={logoUrl}
-              alt="Diferencial Certificado Digital"
-              width={120}
-              height={120}
-              className="mx-auto h-20 w-auto object-contain sm:h-24"
-            />
-            <p className="mt-6 text-center text-sm font-semibold text-muted-foreground">
-              Você é:
-            </p>
-            <div className="mt-3 flex flex-col items-center gap-3 sm:flex-row sm:justify-start">
-              <a
-                href="#emissao"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.03] sm:w-auto"
-                style={{ background: "var(--gradient-brand)" }}
-              >
-                Quero emitir meu certificado
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-              <a
-                href="#parceria-contabil"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-secondary sm:w-auto"
-              >
-                Sou contador, quero ser parceiro
-              </a>
-            </div>
+          <p className="mt-8 text-sm font-semibold text-muted-foreground">
+            Você é:
+          </p>
+          <div className="mt-3 flex flex-col items-center gap-3 sm:flex-row sm:justify-start">
+            <a
+              href="#emissao"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:scale-[1.03] sm:w-auto"
+              style={{ background: "var(--gradient-brand)" }}
+            >
+              Quero emitir meu certificado
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#parceria-contabil"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-7 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-secondary sm:w-auto"
+            >
+              Sou contador, quero ser parceiro
+            </a>
           </div>
 
           <div className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6">
