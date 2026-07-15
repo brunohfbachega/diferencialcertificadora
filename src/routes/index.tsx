@@ -601,6 +601,9 @@ function ParceriaContabil() {
     <section id="parceria-contabil" className="mx-auto max-w-6xl px-6 py-24">
       <div className="grid items-center gap-10 overflow-hidden rounded-[2.5rem] border border-border bg-card p-8 shadow-[var(--shadow-soft)] lg:grid-cols-2 lg:p-12">
         <div>
+          <span className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-sm">
+            ÁREA EXCLUSIVA PARA CONTADORES
+          </span>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
             Para Contabilidades
           </p>
