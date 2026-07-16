@@ -59,6 +59,8 @@ const escritorioUrl = escritorioAsset.url;
 const escritorioMobileUrl = escritorioMobileAsset.url;
 import logoAsset from "@/assets/logo-diferencial.webp.asset.json";
 const logoUrl = logoAsset.url;
+import heroPhoneAsset from "@/assets/hero-phone-diferencial.png.asset.json";
+const heroPhoneUrl = heroPhoneAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -213,35 +215,20 @@ function Atracao() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative"
+          className="relative flex items-center justify-center"
         >
-          <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card shadow-[var(--shadow-soft)]">
-            <img
-              src={escritorioMobileUrl}
-              srcSet={`${escritorioMobileUrl} 800w, ${escritorioUrl} 1400w`}
-              sizes="(max-width: 640px) 92vw, (max-width: 1024px) 90vw, 540px"
-              alt="Escritório Diferencial Certificado Digital"
-              width={1254}
-              height={1254}
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              className="aspect-square w-full object-cover"
-            />
-          </div>
-          <FloatingCard
-            className="-bottom-6 -left-6"
-            icon={<ShieldCheck className="h-5 w-5" />}
-            title="Validade Jurídica"
-            subtitle="ICP-Brasil"
-          />
-          <FloatingCard
-            className="-right-4 top-8"
-            icon={<Zap className="h-5 w-5" />}
-            title="Emissão expressa"
-            subtitle="Em até 1 dia útil"
+          <img
+            src={heroPhoneUrl}
+            alt="Certificado Digital Diferencial no celular — faça o seu agora mesmo"
+            width={1200}
+            height={1200}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            className="w-full max-w-[520px] object-contain drop-shadow-[0_30px_60px_rgba(139,42,140,0.25)]"
           />
         </motion.div>
+
       </div>
     </section>
   );
