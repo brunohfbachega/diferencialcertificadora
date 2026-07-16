@@ -59,7 +59,7 @@ const escritorioUrl = escritorioAsset.url;
 const escritorioMobileUrl = escritorioMobileAsset.url;
 import logoAsset from "@/assets/logo-diferencial.webp.asset.json";
 const logoUrl = logoAsset.url;
-import heroPhoneAsset from "@/assets/hero-phone-diferencial.png.asset.json";
+import heroPhoneAsset from "@/assets/hero-phone-hand.png.asset.json";
 const heroPhoneUrl = heroPhoneAsset.url;
 
 export const Route = createFileRoute("/")({
@@ -215,7 +215,7 @@ function Atracao() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative flex items-center justify-center"
+          className="relative flex items-center justify-center lg:justify-end lg:-mr-8"
         >
           <img
             src={heroPhoneUrl}
@@ -225,7 +225,7 @@ function Atracao() {
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="w-full max-w-[520px] object-contain drop-shadow-[0_30px_60px_rgba(139,42,140,0.25)]"
+            className="w-full h-auto max-w-[640px] object-contain drop-shadow-[0_30px_60px_rgba(139,42,140,0.25)] lg:max-w-none"
           />
         </motion.div>
 
