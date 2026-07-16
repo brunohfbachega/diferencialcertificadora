@@ -139,9 +139,8 @@ function Header() {
 /* ===================== ATRAÇÃO ===================== */
 function Atracao() {
   return (
-    <section className="relative overflow-hidden">
-
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:pt-20">
+    <section className="relative">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-6 lg:pb-20 lg:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -215,7 +214,7 @@ function Atracao() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative flex items-center justify-center lg:justify-end lg:-mr-8"
+          className="relative -mx-6 flex items-center justify-center sm:-mx-10 md:-mx-12 lg:mx-0 lg:-mr-8 lg:justify-end"
         >
           <img
             src={heroPhoneUrl}
@@ -225,10 +224,9 @@ function Atracao() {
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="w-full h-auto max-w-[640px] object-contain drop-shadow-[0_30px_60px_rgba(139,42,140,0.25)] lg:max-w-none"
+            className="h-auto w-full max-w-[120%] object-contain drop-shadow-[0_30px_60px_rgba(139,42,140,0.25)] sm:max-w-[110%] lg:max-w-[130%]"
           />
         </motion.div>
-
       </div>
     </section>
   );
