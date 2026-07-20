@@ -27,6 +27,13 @@ import {
   Award,
   Percent,
   AlertCircle,
+  Cloud,
+  Smartphone,
+  Fingerprint,
+  BellRing,
+  History,
+  Apple,
+  Play,
 } from "lucide-react";
 
 /* Ícone oficial do WhatsApp (SVG inline) — usado nos CTAs */
