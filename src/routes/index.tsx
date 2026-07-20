@@ -797,50 +797,108 @@ function Depoimentos() {
       role: "Local Guide · 9 avaliações",
       text: "Atendimento de qualidade, rapidez e agilidade!",
     },
+    {
+      name: "Adriana Rodrigues",
+      role: "Avaliação Google · 12 avaliações",
+      text: "Atendimento maravilhoso, rapidez e super indico.",
+    },
+    {
+      name: "Marlon",
+      role: "Avaliação Google · 1 avaliação",
+      text: "Rapidez no atendimento, eficientes e muito prestativos.",
+    },
+    {
+      name: "Lucas Ferreira Lima",
+      role: "Local Guide · 63 avaliações",
+      text: "Rápidos e justos.",
+    },
+    {
+      name: "Camilla M",
+      role: "Avaliação Google · 2 avaliações",
+      text: "Excelente atendimento, recomendo demais a Diferencial!",
+    },
   ];
 
-  return (
-    <section id="depoimentos" className="mx-auto max-w-6xl px-6 py-24">
-      <div className="text-center">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
-          Prova social
-        </p>
-        <h2 className="mx-auto max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">
-          O que nossos clientes dizem
-        </h2>
-      </div>
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
 
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
-        {testimonials.map((t) => (
+  const scrollBy = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-testimonial-card]");
+    const step = card ? card.offsetWidth + 20 : el.clientWidth * 0.9;
+    el.scrollBy({ left: step * dir, behavior: "smooth" });
+  };
+
+  return (
+    <section id="depoimentos" className="py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="rounded-3xl border border-border bg-card/60 p-8 shadow-[var(--shadow-soft)] sm:p-12">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">
+            Depoimentos
+          </p>
+          <h2 className="mt-3 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl">
+            O que dizem sobre a Diferencial
+          </h2>
+          <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
+            Veja o que nossos clientes compartilharam sobre a experiência de emitir o certificado digital com o nosso time.
+          </p>
+
           <div
-            key={t.name}
-            className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]"
+            ref={scrollerRef}
+            className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
-            <div className="mb-3 flex gap-0.5" style={{ color: "var(--primary-glow)" }}>
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-current" />
-              ))}
-            </div>
-            <p className="text-sm leading-relaxed text-foreground/90">"{t.text}"</p>
-            <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
-              <div className="relative shrink-0">
-                <div
-                  className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-primary-foreground"
-                  style={{ background: "var(--gradient-brand)" }}
-                >
-                  {t.name.charAt(0)}
+            {testimonials.map((t) => (
+              <div
+                key={t.name}
+                data-testimonial-card
+                className="flex w-[85%] shrink-0 snap-start flex-col rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] sm:w-[360px]"
+              >
+                <div className="mb-3 flex gap-0.5" style={{ color: "var(--primary-glow)" }}>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
                 </div>
-                <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-card bg-background">
-                  <GoogleBadge className="h-3 w-3" />
-                </span>
+                <p className="text-sm leading-relaxed text-foreground/90">"{t.text}"</p>
+                <div className="mt-6 flex items-center gap-3 border-t border-border pt-4">
+                  <div className="relative shrink-0">
+                    <div
+                      className="flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold text-primary-foreground"
+                      style={{ background: "var(--gradient-brand)" }}
+                    >
+                      {t.name.charAt(0)}
+                    </div>
+                    <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-background bg-card">
+                      <GoogleBadge className="h-3 w-3" />
+                    </span>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-bold">{t.name}</p>
+                    <p className="truncate text-xs text-muted-foreground">{t.role}</p>
+                  </div>
+                </div>
               </div>
-              <div className="min-w-0">
-                <p className="truncate text-sm font-bold">{t.name}</p>
-                <p className="truncate text-xs text-muted-foreground">{t.role}</p>
-              </div>
-            </div>
+            ))}
           </div>
-        ))}
+
+          <div className="mt-8 flex items-center gap-3">
+            <button
+              type="button"
+              aria-label="Depoimento anterior"
+              onClick={() => scrollBy(-1)}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-foreground transition hover:bg-muted"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              aria-label="Próximo depoimento"
+              onClick={() => scrollBy(1)}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-foreground transition hover:bg-muted"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );
