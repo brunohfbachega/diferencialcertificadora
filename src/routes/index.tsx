@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
@@ -820,14 +820,30 @@ function Depoimentos() {
   ];
 
   const scrollerRef = useRef<HTMLDivElement | null>(null);
+  const isPausedRef = useRef(false);
 
   const scrollBy = (dir: 1 | -1) => {
     const el = scrollerRef.current;
     if (!el) return;
     const card = el.querySelector<HTMLElement>("[data-testimonial-card]");
     const step = card ? card.offsetWidth + 20 : el.clientWidth * 0.9;
-    el.scrollBy({ left: step * dir, behavior: "smooth" });
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    let next = el.scrollLeft + step * dir;
+    if (dir === 1 && el.scrollLeft >= maxScroll - 4) next = 0;
+    if (dir === -1 && el.scrollLeft <= 4) next = maxScroll;
+    el.scrollTo({ left: next, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) return;
+    const id = window.setInterval(() => {
+      if (!isPausedRef.current) scrollBy(1);
+    }, 4500);
+    return () => window.clearInterval(id);
+  }, []);
+
 
   return (
     <section id="depoimentos" className="py-24">
@@ -845,6 +861,12 @@ function Depoimentos() {
 
           <div
             ref={scrollerRef}
+            onMouseEnter={() => (isPausedRef.current = true)}
+            onMouseLeave={() => (isPausedRef.current = false)}
+            onFocusCapture={() => (isPausedRef.current = true)}
+            onBlurCapture={() => (isPausedRef.current = false)}
+            onTouchStart={() => (isPausedRef.current = true)}
+            onTouchEnd={() => (isPausedRef.current = false)}
             className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
             {testimonials.map((t) => (
