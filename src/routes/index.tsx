@@ -422,7 +422,180 @@ function Diferenciais() {
   );
 }
 
-/* ===================== QUEM SOMOS ===================== */
+/* ===================== CERTIFICADO EM NUVEM / SYMPASS ===================== */
+function CertificadoNuvem() {
+  const benefits = [
+    {
+      icon: <Smartphone className="h-5 w-5" />,
+      title: "Sem dispositivo físico",
+      text: "Acesse e assine de qualquer lugar, só com o celular. Sem token, sem cartão, sem leitora.",
+    },
+    {
+      icon: <FileSignature className="h-5 w-5" />,
+      title: "Assinatura com validade jurídica",
+      text: "Mesma segurança e validade do certificado tradicional, dentro do padrão ICP-Brasil.",
+    },
+    {
+      icon: <Zap className="h-5 w-5" />,
+      title: "Praticidade no dia a dia",
+      text: "Assine documentos, acesse e-CAC, Receita Federal e sistemas contábeis sem instalar drivers.",
+    },
+    {
+      icon: <ShieldCheck className="h-5 w-5" />,
+      title: "Chaves protegidas em HSM",
+      text: "Seu certificado fica armazenado em servidor certificado de alta segurança (HSM).",
+    },
+  ];
+
+  const features = [
+    { icon: <Fingerprint className="h-4 w-4" />, text: "Autenticação por biometria do celular" },
+    { icon: <BellRing className="h-4 w-4" />, text: "Notificação push para autorizar cada assinatura" },
+    { icon: <FileSignature className="h-4 w-4" />, text: "Assinatura de documentos direto no app" },
+    { icon: <History className="h-4 w-4" />, text: "Histórico completo de uso e acessos" },
+    { icon: <Lock className="h-4 w-4" />, text: "Proteção com senha e segundo fator" },
+  ];
+
+  return (
+    <section id="certificado-nuvem" className="mx-auto max-w-6xl px-6 py-24">
+      {/* Abertura */}
+      <div className="text-center">
+        <span
+          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground"
+          style={{ background: "var(--gradient-brand)" }}
+        >
+          <Cloud className="h-3.5 w-3.5" />
+          Certificado em Nuvem
+        </span>
+        <h2 className="mx-auto mt-5 max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl">
+          Seu certificado, sempre com você — sem token, sem cartão, sem complicação
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
+          O Certificado Digital em Nuvem fica armazenado com segurança máxima em HSM e é acessado
+          direto pelo celular. Nada de token físico, cartão ou leitora — só praticidade.
+        </p>
+      </div>
+
+      {/* Cards de benefícios */}
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {benefits.map((b) => (
+          <div
+            key={b.title}
+            className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-1"
+          >
+            <div
+              className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl text-primary-foreground"
+              style={{ background: "var(--gradient-brand)" }}
+            >
+              {b.icon}
+            </div>
+            <h3 className="text-lg font-bold">{b.title}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{b.text}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Sub-bloco Sympass */}
+      <div className="mt-20 grid items-center gap-12 lg:grid-cols-2">
+        <div>
+          <span
+            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground"
+            style={{ background: "var(--gradient-brand)" }}
+          >
+            App próprio Diferencial
+          </span>
+          <h3 className="mt-5 text-2xl font-extrabold leading-tight sm:text-3xl">
+            Conheça o{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: "var(--gradient-brand)" }}
+            >
+              Sympass
+            </span>
+            , o app da Diferencial para autenticar e assinar seus documentos
+          </h3>
+          <p className="mt-4 text-base text-muted-foreground">
+            O Sympass é o aplicativo próprio da Diferencial para uso do seu certificado em nuvem.
+            Pelo celular, você autentica login, assina documentos com validade jurídica e acompanha
+            todo o histórico de uso em tempo real.
+          </p>
+
+          <ul className="mt-6 space-y-3">
+            {features.map((f) => (
+              <li key={f.text} className="flex items-start gap-3">
+                <span
+                  className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-primary-foreground"
+                  style={{ background: "var(--gradient-brand)" }}
+                >
+                  <CheckCircle2 className="h-4 w-4" />
+                </span>
+                <span className="flex items-center gap-2 text-sm text-foreground">
+                  <span className="text-primary">{f.icon}</span>
+                  {f.text}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
+            >
+              <Apple className="h-5 w-5" />
+              <span className="flex flex-col leading-tight text-left">
+                <span className="text-[10px] font-normal opacity-80">Baixar na</span>
+                <span className="text-sm font-bold">App Store</span>
+              </span>
+            </a>
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
+            >
+              <Play className="h-5 w-5" />
+              <span className="flex flex-col leading-tight text-left">
+                <span className="text-[10px] font-normal opacity-80">Baixar no</span>
+                <span className="text-sm font-bold">Google Play</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        {/* Mockup */}
+        <div className="relative flex justify-center lg:justify-end">
+          <div
+            className="absolute inset-0 -z-10 mx-auto h-full w-2/3 rounded-full opacity-30 blur-3xl"
+            style={{ background: "var(--gradient-brand)" }}
+          />
+          <img
+            src={heroPhoneUrl}
+            alt="Aplicativo Sympass no celular"
+            loading="lazy"
+            className="max-h-[520px] w-auto drop-shadow-2xl"
+          />
+        </div>
+      </div>
+
+      {/* CTA de fechamento */}
+      <div className="mt-16 flex flex-col items-center text-center">
+        <a
+          href={WHATSAPP}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-brand)] transition-transform hover:-translate-y-0.5"
+          style={{ background: "var(--gradient-brand)" }}
+        >
+          <WhatsAppIcon className="h-5 w-5" />
+          Quero emitir meu certificado em nuvem
+          <ArrowRight className="h-4 w-4" />
+        </a>
+        <p className="mt-3 text-sm text-muted-foreground">
+          Emissão 100% guiada, com suporte humano do início ao fim.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function QuemSomos() {
   const pilares = [
     {
