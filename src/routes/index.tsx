@@ -107,6 +107,7 @@ function Landing() {
       <Atracao />
       <Conexao />
       <Diferenciais />
+      <CertificadoNuvem />
       <QuemSomos />
       <ParceriaContabil />
       <Confianca />
