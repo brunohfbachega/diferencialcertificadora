@@ -861,6 +861,12 @@ function Depoimentos() {
 
           <div
             ref={scrollerRef}
+            onMouseEnter={() => (isPausedRef.current = true)}
+            onMouseLeave={() => (isPausedRef.current = false)}
+            onFocusCapture={() => (isPausedRef.current = true)}
+            onBlurCapture={() => (isPausedRef.current = false)}
+            onTouchStart={() => (isPausedRef.current = true)}
+            onTouchEnd={() => (isPausedRef.current = false)}
             className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
             {testimonials.map((t) => (
