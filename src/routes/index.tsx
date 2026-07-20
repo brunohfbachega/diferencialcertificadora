@@ -436,7 +436,7 @@ function QuemSomos() {
 
   const stats = [
     { icon: <Users className="h-6 w-6" />, value: "+5.000", label: "clientes atendidos" },
-    { icon: <Clock className="h-6 w-6" />, value: "10 anos", label: "no mercado" },
+    { icon: <Clock className="h-6 w-6" />, value: "7 anos", label: "no mercado" },
     { icon: <MapPin className="h-6 w-6" />, value: "Atuação", label: "nacional" },
     { icon: <ShieldCheck className="h-6 w-6" />, value: "ICP-Brasil", label: "autorizada" },
   ];
