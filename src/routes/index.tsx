@@ -574,7 +574,7 @@ function CertificadoNuvem() {
   );
 }
 
-type Pilar = { icon: React.ReactNode; title: string; text: string };
+type Pilar = { icon: ReactNode; title: string; text: string };
 
 function PilaresInterativos({ pilares }: { pilares: Pilar[] }) {
   const [active, setActive] = useState(0);
