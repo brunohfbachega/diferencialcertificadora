@@ -577,14 +577,14 @@ function CertificadoNuvem() {
   );
 }
 
-type Pilar = { icon: ReactNode; title: string; text: string };
+type Pilar = { icon: ReactNode; title: string; text: string; image: string };
 
 function PilaresInterativos({ pilares }: { pilares: Pilar[] }) {
   const [active, setActive] = useState(0);
   return (
     <div className="mt-16">
-      {/* Desktop: expanding horizontal panels */}
-      <div className="hidden md:flex gap-3 h-[320px]">
+      {/* Desktop: expanding horizontal panels with background image */}
+      <div className="hidden md:flex gap-3 h-[420px]">
         {pilares.map((p, i) => {
           const isActive = active === i;
           return (
@@ -594,22 +594,47 @@ function PilaresInterativos({ pilares }: { pilares: Pilar[] }) {
               onMouseEnter={() => setActive(i)}
               onFocus={() => setActive(i)}
               onClick={() => setActive(i)}
-              className={`group relative overflow-hidden rounded-2xl border border-border text-left shadow-[var(--shadow-soft)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                isActive ? "flex-[4]" : "flex-[1]"
+              className={`group relative overflow-hidden rounded-3xl border border-border text-left shadow-[var(--shadow-soft)] transition-[flex] duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                isActive ? "flex-[5]" : "flex-[1]"
               }`}
-              style={{
-                background: isActive ? "var(--gradient-brand)" : "hsl(var(--card))",
-              }}
               aria-expanded={isActive}
             >
-              {/* Collapsed vertical label */}
+              {/* Background image with slow ken-burns on active */}
               <div
-                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+                className={`absolute inset-0 bg-cover bg-center transition-transform duration-[2500ms] ease-out ${
+                  isActive ? "scale-110" : "scale-100"
+                }`}
+                style={{ backgroundImage: `url(${p.image})` }}
+              />
+
+              {/* Overlays: brand gradient when active, dark tint when collapsed */}
+              <div
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  isActive ? "opacity-0" : "opacity-100"
+                }`}
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(20,10,30,0.55) 0%, rgba(20,10,30,0.85) 100%)",
+                }}
+              />
+              <div
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  isActive ? "opacity-90" : "opacity-0"
+                }`}
+                style={{
+                  background:
+                    "linear-gradient(135deg, color-mix(in oklab, var(--primary) 78%, transparent) 0%, color-mix(in oklab, var(--primary) 40%, transparent) 60%, transparent 100%)",
+                }}
+              />
+
+              {/* Collapsed: vertical label */}
+              <div
+                className={`absolute inset-0 flex items-end justify-center pb-8 transition-opacity duration-500 ${
                   isActive ? "opacity-0 pointer-events-none" : "opacity-100"
                 }`}
               >
                 <span
-                  className="text-sm font-bold uppercase tracking-[0.3em] text-foreground/80"
+                  className="text-xs font-bold uppercase tracking-[0.4em] text-white/90"
                   style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
                 >
                   {p.title}
@@ -618,46 +643,61 @@ function PilaresInterativos({ pilares }: { pilares: Pilar[] }) {
 
               {/* Expanded content */}
               <div
-                className={`relative flex h-full flex-col justify-between p-8 transition-opacity duration-500 ${
-                  isActive ? "opacity-100 delay-200" : "opacity-0"
+                className={`relative flex h-full flex-col justify-end p-8 transition-all duration-700 ${
+                  isActive
+                    ? "opacity-100 translate-y-0 delay-300"
+                    : "opacity-0 translate-y-4"
                 }`}
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white backdrop-blur">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white backdrop-blur-md ring-1 ring-white/30">
                     {p.icon}
                   </div>
-                  <h3 className="text-2xl font-extrabold text-white">{p.title}</h3>
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/80">
+                    0{i + 1} / 0{pilares.length}
+                  </div>
                 </div>
-                <p className="max-w-xl text-sm leading-relaxed text-white/90 sm:text-base">
+                <h3 className="text-3xl font-extrabold text-white drop-shadow-sm">
+                  {p.title}
+                </h3>
+                <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/95 sm:text-[15px]">
                   {p.text}
                 </p>
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-                  <span className="h-px w-8 bg-white/60" />
-                  0{i + 1} / 0{pilares.length}
-                </div>
               </div>
             </button>
           );
         })}
       </div>
 
-      {/* Mobile: stacked cards */}
+      {/* Mobile: image cards stacked */}
       <div className="grid gap-4 md:hidden">
         {pilares.map((p, i) => (
           <div
             key={p.title}
-            className="rounded-2xl border border-border p-6 shadow-[var(--shadow-soft)] text-white"
-            style={{ background: "var(--gradient-brand)" }}
+            className="relative overflow-hidden rounded-2xl border border-border shadow-[var(--shadow-soft)] h-[260px]"
           >
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 backdrop-blur">
-                {p.icon}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${p.image})` }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(20,10,30,0.25) 0%, color-mix(in oklab, var(--primary) 70%, transparent) 100%)",
+              }}
+            />
+            <div className="relative flex h-full flex-col justify-end p-6 text-white">
+              <div className="mb-3 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 backdrop-blur ring-1 ring-white/30">
+                  {p.icon}
+                </div>
+                <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/80">
+                  0{i + 1} / 0{pilares.length}
+                </div>
               </div>
-              <h3 className="text-lg font-bold">{p.title}</h3>
-            </div>
-            <p className="mt-3 text-sm leading-relaxed text-white/90">{p.text}</p>
-            <div className="mt-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
-              0{i + 1} / 0{pilares.length}
+              <h3 className="text-2xl font-extrabold">{p.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/95">{p.text}</p>
             </div>
           </div>
         ))}
