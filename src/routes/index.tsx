@@ -545,8 +545,8 @@ function CertificadoNuvem() {
             style={{ background: "var(--gradient-brand)" }}
           />
           <img
-            src={heroPhoneUrl}
-            alt="Aplicativo Sympass no celular"
+            src={certificadoNuvemSympassUrl}
+            alt="Certificado Digital em Nuvem com Sympass"
             loading="lazy"
             className="max-h-[520px] w-auto drop-shadow-2xl"
           />
