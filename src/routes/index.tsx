@@ -67,7 +67,9 @@ const escritorioMobileUrl = escritorioMobileAsset.url;
 import logoAsset from "@/assets/logo-diferencial.webp.asset.json";
 const logoUrl = logoAsset.url;
 import heroPhoneAsset from "@/assets/hero-phone-hand.png.asset.json";
+import certificadoNuvemSympassAsset from "@/assets/certificado-nuvem-sympass.png.asset.json";
 const heroPhoneUrl = heroPhoneAsset.url;
+const certificadoNuvemSympassUrl = certificadoNuvemSympassAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
