@@ -32,8 +32,6 @@ import {
   Fingerprint,
   BellRing,
   History,
-  Apple,
-  Play,
 } from "lucide-react";
 
 /* Ícone oficial do WhatsApp (SVG inline) — usado nos CTAs */
@@ -536,28 +534,6 @@ function CertificadoNuvem() {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
-            >
-              <Apple className="h-5 w-5" />
-              <span className="flex flex-col leading-tight text-left">
-                <span className="text-[10px] font-normal opacity-80">Baixar na</span>
-                <span className="text-sm font-bold">App Store</span>
-              </span>
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
-            >
-              <Play className="h-5 w-5" />
-              <span className="flex flex-col leading-tight text-left">
-                <span className="text-[10px] font-normal opacity-80">Baixar no</span>
-                <span className="text-sm font-bold">Google Play</span>
-              </span>
-            </a>
-          </div>
         </div>
 
         {/* Mockup */}
