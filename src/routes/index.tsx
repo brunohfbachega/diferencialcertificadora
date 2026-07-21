@@ -68,6 +68,9 @@ import logoAsset from "@/assets/logo-diferencial.webp.asset.json";
 const logoUrl = logoAsset.url;
 import heroPhoneAsset from "@/assets/hero-phone-hand.png.asset.json";
 import certificadoNuvemSympassAsset from "@/assets/certificado-nuvem-sympass.png.asset.json";
+import pilarMissaoAsset from "@/assets/pilar-missao.jpg.asset.json";
+import pilarVisaoAsset from "@/assets/pilar-visao.jpg.asset.json";
+import pilarValoresAsset from "@/assets/pilar-valores.jpg.asset.json";
 const heroPhoneUrl = heroPhoneAsset.url;
 const certificadoNuvemSympassUrl = certificadoNuvemSympassAsset.url;
 
