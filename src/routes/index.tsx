@@ -574,6 +574,95 @@ function CertificadoNuvem() {
   );
 }
 
+type Pilar = { icon: React.ReactNode; title: string; text: string };
+
+function PilaresInterativos({ pilares }: { pilares: Pilar[] }) {
+  const [active, setActive] = useState(0);
+  return (
+    <div className="mt-16">
+      {/* Desktop: expanding horizontal panels */}
+      <div className="hidden md:flex gap-3 h-[320px]">
+        {pilares.map((p, i) => {
+          const isActive = active === i;
+          return (
+            <button
+              key={p.title}
+              type="button"
+              onMouseEnter={() => setActive(i)}
+              onFocus={() => setActive(i)}
+              onClick={() => setActive(i)}
+              className={`group relative overflow-hidden rounded-2xl border border-border text-left shadow-[var(--shadow-soft)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                isActive ? "flex-[4]" : "flex-[1]"
+              }`}
+              style={{
+                background: isActive ? "var(--gradient-brand)" : "hsl(var(--card))",
+              }}
+              aria-expanded={isActive}
+            >
+              {/* Collapsed vertical label */}
+              <div
+                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+                  isActive ? "opacity-0 pointer-events-none" : "opacity-100"
+                }`}
+              >
+                <span
+                  className="text-sm font-bold uppercase tracking-[0.3em] text-foreground/80"
+                  style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+                >
+                  {p.title}
+                </span>
+              </div>
+
+              {/* Expanded content */}
+              <div
+                className={`relative flex h-full flex-col justify-between p-8 transition-opacity duration-500 ${
+                  isActive ? "opacity-100 delay-200" : "opacity-0"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white backdrop-blur">
+                    {p.icon}
+                  </div>
+                  <h3 className="text-2xl font-extrabold text-white">{p.title}</h3>
+                </div>
+                <p className="max-w-xl text-sm leading-relaxed text-white/90 sm:text-base">
+                  {p.text}
+                </p>
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                  <span className="h-px w-8 bg-white/60" />
+                  0{i + 1} / 0{pilares.length}
+                </div>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Mobile: stacked cards */}
+      <div className="grid gap-4 md:hidden">
+        {pilares.map((p, i) => (
+          <div
+            key={p.title}
+            className="rounded-2xl border border-border p-6 shadow-[var(--shadow-soft)] text-white"
+            style={{ background: "var(--gradient-brand)" }}
+          >
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 backdrop-blur">
+                {p.icon}
+              </div>
+              <h3 className="text-lg font-bold">{p.title}</h3>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-white/90">{p.text}</p>
+            <div className="mt-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
+              0{i + 1} / 0{pilares.length}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function QuemSomos() {
   const pilares = [
     {
