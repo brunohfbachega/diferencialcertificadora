@@ -698,26 +698,8 @@ function QuemSomos() {
           </div>
         </div>
 
-        {/* Missão, Visão, Valores */}
-        <div className="mt-16 grid gap-5 md:grid-cols-3">
-          {pilares.map((p) => (
-            <div
-              key={p.title}
-              className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)]"
-            >
-              <div className="flex items-center gap-3">
-                <div
-                  className="flex h-10 w-10 items-center justify-center rounded-xl text-primary-foreground"
-                  style={{ background: "var(--gradient-brand)" }}
-                >
-                  {p.icon}
-                </div>
-                <h3 className="text-lg font-bold">{p.title}</h3>
-              </div>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
-            </div>
-          ))}
-        </div>
+        {/* Missão, Visão, Valores — Craft interactive cards */}
+        <PilaresInterativos pilares={pilares} />
       </div>
     </section>
   );
