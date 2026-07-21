@@ -712,16 +712,19 @@ function QuemSomos() {
       icon: <Target className="h-5 w-5" />,
       title: "Missão",
       text: "Oferecer soluções em certificação digital com segurança, agilidade e excelência, simplificando processos e contribuindo para a transformação digital de nossos clientes.",
+      image: pilarMissaoAsset.url,
     },
     {
       icon: <Eye className="h-5 w-5" />,
       title: "Visão",
       text: "Ser referência nacional em certificação digital, reconhecida pela inovação, qualidade dos serviços e excelência no atendimento.",
+      image: pilarVisaoAsset.url,
     },
     {
       icon: <Award className="h-5 w-5" />,
       title: "Valores",
       text: "Ética e transparência; compromisso com o cliente; segurança e confiabilidade; agilidade e eficiência; inovação e melhoria contínua; respeito às pessoas e relações; excelência na prestação de serviços.",
+      image: pilarValoresAsset.url,
     },
   ];
 
