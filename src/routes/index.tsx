@@ -52,7 +52,7 @@ import escritorioAsset from "@/assets/escritorio-diferencial.webp.asset.json";
 import escritorioMobileAsset from "@/assets/escritorio-diferencial-800.webp.asset.json";
 const escritorioUrl = escritorioAsset.url;
 const escritorioMobileUrl = escritorioMobileAsset.url;
-import heroPhoneAsset from "@/assets/hero-phone-hand.png.asset.json";
+import heroPhoneAsset from "@/assets/hero-homem-phone.png.asset.json";
 import certificadoNuvemSympassAsset from "@/assets/certificado-nuvem-sympass-v2.png.asset.json";
 import pilarMissaoAsset from "@/assets/pilar-missao.jpg.asset.json";
 import pilarVisaoAsset from "@/assets/pilar-visao.jpg.asset.json";
