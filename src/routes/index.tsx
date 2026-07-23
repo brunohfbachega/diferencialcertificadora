@@ -57,8 +57,22 @@ import certificadoNuvemSympassAsset from "@/assets/certificado-nuvem-sympass-v2.
 import pilarMissaoAsset from "@/assets/pilar-missao.jpg.asset.json";
 import pilarVisaoAsset from "@/assets/pilar-visao.jpg.asset.json";
 import pilarValoresAsset from "@/assets/pilar-valores.jpg.asset.json";
+import testimonialAvatar1Asset from "@/assets/testimonial-avatar-1.png.asset.json";
+import testimonialAvatar2Asset from "@/assets/testimonial-avatar-2.png.asset.json";
+import testimonialAvatar3Asset from "@/assets/testimonial-avatar-3.png.asset.json";
+import testimonialAvatar4Asset from "@/assets/testimonial-avatar-4.png.asset.json";
+import testimonialArte1Asset from "@/assets/testimonial-arte-1.png.asset.json";
+import testimonialArte2Asset from "@/assets/testimonial-arte-2.png.asset.json";
 const heroPhoneUrl = heroPhoneAsset.url;
 const certificadoNuvemSympassUrl = certificadoNuvemSympassAsset.url;
+const testimonialImages = [
+  testimonialAvatar1Asset.url,
+  testimonialAvatar2Asset.url,
+  testimonialAvatar3Asset.url,
+  testimonialAvatar4Asset.url,
+  testimonialArte1Asset.url,
+  testimonialArte2Asset.url,
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -1135,33 +1149,41 @@ function Depoimentos() {
             onTouchEnd={() => (isPausedRef.current = false)}
             className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
-            {testimonials.map((t) => (
+            {testimonials.map((t, i) => (
               <div
                 key={t.name}
                 data-testimonial-card
-                className="flex w-[85%] shrink-0 snap-start flex-col rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] sm:w-[360px]"
+                className="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-[var(--shadow-soft)] sm:w-[360px]"
               >
-                <div className="mb-3 flex gap-0.5" style={{ color: "var(--primary-glow)" }}>
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
+                <div className="relative h-40 w-full overflow-hidden bg-secondary/50">
+                  <img
+                    src={testimonialImages[i % testimonialImages.length]}
+                    alt={`Arte de depoimento de ${t.name}`}
+                    width={360}
+                    height={160}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                  />
+                  <span className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full border border-white/30 bg-background/90 shadow-sm">
+                    <GoogleBadge className="h-3.5 w-3.5" />
+                  </span>
                 </div>
-                <p className="text-sm leading-relaxed text-foreground/90">"{t.text}"</p>
-                <div className="mt-6 flex items-center gap-3 border-t border-border pt-4">
-                  <div className="relative shrink-0">
-                    <div
-                      className="flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold text-primary-foreground"
-                      style={{ background: "var(--gradient-brand)" }}
-                    >
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="mb-3 flex gap-0.5" style={{ color: "var(--primary-glow)" }}>
+                    {Array.from({ length: 5 }).map((_, si) => (
+                      <Star key={si} className="h-4 w-4 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-sm leading-relaxed text-foreground/90">"{t.text}"</p>
+                  <div className="mt-auto flex items-center gap-3 border-t border-border pt-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-primary-foreground" style={{ background: "var(--gradient-brand)" }}>
                       {t.name.charAt(0)}
                     </div>
-                    <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-background bg-card">
-                      <GoogleBadge className="h-3 w-3" />
-                    </span>
-                  </div>
-                  <div className="min-w-0">
-                    <p className="truncate text-sm font-bold">{t.name}</p>
-                    <p className="truncate text-xs text-muted-foreground">{t.role}</p>
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-bold">{t.name}</p>
+                      <p className="truncate text-xs text-muted-foreground">{t.role}</p>
+                    </div>
                   </div>
                 </div>
               </div>
