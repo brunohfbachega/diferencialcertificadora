@@ -1053,6 +1053,36 @@ function Depoimentos() {
       role: "Avaliação Google · 2 avaliações",
       text: "Excelente atendimento, recomendo demais a Diferencial!",
     },
+    {
+      name: "Gabriele Oliveira",
+      role: "Avaliação Google · 9 avaliações",
+      text: "Há 3 anos emitindo certificado digital de todas as minhas empresas com a Diferencial. Ótimo atendimento, preço justo e o melhor: agilidade na emissão dos certificados. Pós atendimento também é ótimo.",
+    },
+    {
+      name: "Julio Cezar de Andrade Peixoto",
+      role: "Avaliação Google · 2 avaliações",
+      text: "Atendimento on line rápido, prático e bem orientado. Equipe competente.",
+    },
+    {
+      name: "Sérgio Círico",
+      role: "Avaliação Google · 10 avaliações",
+      text: "Ótimo atendimento. Rápido e objetivo. Recomendo.",
+    },
+    {
+      name: "Edson Morgan",
+      role: "Avaliação Google · 6 avaliações",
+      text: "Gostei do atendimento, serviço rápido e a pessoa muita atenciosa e simpática.",
+    },
+    {
+      name: "LianCard",
+      role: "Avaliação Google · 1 avaliação",
+      text: "Atendimento, simpatia e agilidade, sempre estamos renovando com eles por esses motivos, nota 10.",
+    },
+    {
+      name: "Mercado Livre CeK Acessórios",
+      role: "Avaliação Google · 1 avaliação",
+      text: "Ótimo atendimento. Equipe muito atenciosa.",
+    },
   ];
 
   const scrollerRef = useRef<HTMLDivElement | null>(null);
