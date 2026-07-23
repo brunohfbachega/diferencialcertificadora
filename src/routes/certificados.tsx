@@ -11,7 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { PageShell, WhatsAppIcon, WHATSAPP } from "@/components/site-chrome";
-import certificadoNuvemAsset from "@/assets/certificado-nuvem-sympass.png.asset.json";
+import certificadoNuvemAsset from "@/assets/certificado-nuvem-sympass-v2.png.asset.json";
 
 export const Route = createFileRoute("/certificados")({
   head: () => ({

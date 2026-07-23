@@ -53,7 +53,7 @@ import escritorioMobileAsset from "@/assets/escritorio-diferencial-800.webp.asse
 const escritorioUrl = escritorioAsset.url;
 const escritorioMobileUrl = escritorioMobileAsset.url;
 import heroPhoneAsset from "@/assets/hero-phone-hand.png.asset.json";
-import certificadoNuvemSympassAsset from "@/assets/certificado-nuvem-sympass.png.asset.json";
+import certificadoNuvemSympassAsset from "@/assets/certificado-nuvem-sympass-v2.png.asset.json";
 import pilarMissaoAsset from "@/assets/pilar-missao.jpg.asset.json";
 import pilarVisaoAsset from "@/assets/pilar-visao.jpg.asset.json";
 import pilarValoresAsset from "@/assets/pilar-valores.jpg.asset.json";
