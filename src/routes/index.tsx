@@ -57,8 +57,22 @@ import certificadoNuvemSympassAsset from "@/assets/certificado-nuvem-sympass-v2.
 import pilarMissaoAsset from "@/assets/pilar-missao.jpg.asset.json";
 import pilarVisaoAsset from "@/assets/pilar-visao.jpg.asset.json";
 import pilarValoresAsset from "@/assets/pilar-valores.jpg.asset.json";
+import testimonialAvatar1Asset from "@/assets/testimonial-avatar-1.png.asset.json";
+import testimonialAvatar2Asset from "@/assets/testimonial-avatar-2.png.asset.json";
+import testimonialAvatar3Asset from "@/assets/testimonial-avatar-3.png.asset.json";
+import testimonialAvatar4Asset from "@/assets/testimonial-avatar-4.png.asset.json";
+import testimonialArte1Asset from "@/assets/testimonial-arte-1.png.asset.json";
+import testimonialArte2Asset from "@/assets/testimonial-arte-2.png.asset.json";
 const heroPhoneUrl = heroPhoneAsset.url;
 const certificadoNuvemSympassUrl = certificadoNuvemSympassAsset.url;
+const testimonialImages = [
+  testimonialAvatar1Asset.url,
+  testimonialAvatar2Asset.url,
+  testimonialAvatar3Asset.url,
+  testimonialAvatar4Asset.url,
+  testimonialArte1Asset.url,
+  testimonialArte2Asset.url,
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
