@@ -137,7 +137,8 @@ export function Footer() {
               </span>
               <div className="min-w-0">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground">Localização</p>
-                <p className="font-semibold">Joinville/SC</p>
+                <p className="font-semibold">Av. Santos Dumont, 799 - Santo Antônio</p>
+                <p className="text-sm text-muted-foreground">Joinville - SC, 89218-100</p>
                 <p className="text-xs text-muted-foreground">Atendimento em todo o Brasil</p>
               </div>
             </li>
