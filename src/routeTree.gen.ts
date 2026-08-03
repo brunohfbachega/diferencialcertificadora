@@ -9,26 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as ParceriaContabilRouteImport } from './routes/parceria-contabil'
-import { Route as CertificadosRouteImport } from './routes/certificados'
 import { Route as IndexRouteImport } from './routes/index'
 
-const SobreRoute = SobreRouteImport.update({
-  id: '/sobre',
-  path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ParceriaContabilRoute = ParceriaContabilRouteImport.update({
-  id: '/parceria-contabil',
-  path: '/parceria-contabil',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CertificadosRoute = CertificadosRouteImport.update({
-  id: '/certificados',
-  path: '/certificados',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,61 +19,28 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/certificados': typeof CertificadosRoute
-  '/parceria-contabil': typeof ParceriaContabilRoute
-  '/sobre': typeof SobreRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/certificados': typeof CertificadosRoute
-  '/parceria-contabil': typeof ParceriaContabilRoute
-  '/sobre': typeof SobreRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/certificados': typeof CertificadosRoute
-  '/parceria-contabil': typeof ParceriaContabilRoute
-  '/sobre': typeof SobreRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/certificados' | '/parceria-contabil' | '/sobre'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/certificados' | '/parceria-contabil' | '/sobre'
-  id: '__root__' | '/' | '/certificados' | '/parceria-contabil' | '/sobre'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CertificadosRoute: typeof CertificadosRoute
-  ParceriaContabilRoute: typeof ParceriaContabilRoute
-  SobreRoute: typeof SobreRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sobre': {
-      id: '/sobre'
-      path: '/sobre'
-      fullPath: '/sobre'
-      preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/parceria-contabil': {
-      id: '/parceria-contabil'
-      path: '/parceria-contabil'
-      fullPath: '/parceria-contabil'
-      preLoaderRoute: typeof ParceriaContabilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/certificados': {
-      id: '/certificados'
-      path: '/certificados'
-      fullPath: '/certificados'
-      preLoaderRoute: typeof CertificadosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -104,20 +53,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CertificadosRoute: CertificadosRoute,
-  ParceriaContabilRoute: ParceriaContabilRoute,
-  SobreRoute: SobreRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
