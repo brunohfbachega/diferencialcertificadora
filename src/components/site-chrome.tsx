@@ -1,7 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
 import logoAsset from "@/assets/logo-diferencial.webp.asset.json";
-import { SECTIONS } from "@/lib/sections";
-import { useActiveSection, scrollToSection } from "@/hooks/use-active-section";
 
 export const WHATSAPP = "https://wa.me/554741010898";
 export const logoUrl = logoAsset.url;
@@ -15,50 +14,18 @@ export function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) 
   );
 }
 
-const SECTION_IDS = SECTIONS.map((s) => s.id);
-
-function NavLink({
-  id,
-  label,
-  active,
-  className,
-  activeClassName,
-}: {
-  id: string;
-  label: string;
-  active: boolean;
-  className: string;
-  activeClassName: string;
-}) {
-  return (
-    <a
-      href={`#${id}`}
-      aria-current={active ? "page" : undefined}
-      onClick={(e) => {
-        e.preventDefault();
-        scrollToSection(id);
-      }}
-      className={active ? activeClassName : className}
-    >
-      {label}
-    </a>
-  );
-}
+const NAV = [
+  { to: "/", label: "Início" },
+  { to: "/certificados", label: "Certificados" },
+  { to: "/parceria-contabil", label: "Parceria Contábil" },
+  { to: "/sobre", label: "Sobre nós" },
+] as const;
 
 export function Header() {
-  const active = useActiveSection(SECTION_IDS);
-
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-        <a
-          href="#hero"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToSection("hero");
-          }}
-          className="flex items-center gap-3"
-        >
+        <Link to="/" className="flex items-center gap-3">
           <img
             src={logoUrl}
             alt="Diferencial Certificado Digital"
@@ -72,18 +39,19 @@ export function Header() {
               Certificado Digital
             </p>
           </div>
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
-          {SECTIONS.map((item) => (
-            <NavLink
-              key={item.id}
-              id={item.id}
-              label={item.label}
-              active={active === item.id}
-              className="rounded-full px-3 py-2 text-sm font-semibold text-foreground/80 transition-colors hover:bg-secondary hover:text-primary"
-              activeClassName="rounded-full px-3 py-2 text-sm font-semibold bg-secondary text-primary"
-            />
+        <nav className="hidden items-center gap-1 md:flex">
+          {NAV.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className="rounded-full px-4 py-2 text-sm font-semibold text-foreground/80 transition-colors hover:bg-secondary hover:text-primary"
+              activeProps={{ className: "rounded-full px-4 py-2 text-sm font-semibold bg-secondary text-primary" }}
+              activeOptions={{ exact: true }}
+            >
+              {item.label}
+            </Link>
           ))}
         </nav>
 
@@ -97,17 +65,17 @@ export function Header() {
           <WhatsAppIcon className="h-4 w-4" /> Falar agora
         </a>
       </div>
-
-      <nav className="flex items-center gap-1 overflow-x-auto border-t border-border/60 px-4 py-2 lg:hidden">
-        {SECTIONS.map((item) => (
-          <NavLink
-            key={item.id}
-            id={item.id}
-            label={item.label}
-            active={active === item.id}
+      <nav className="flex items-center gap-1 overflow-x-auto border-t border-border/60 px-4 py-2 md:hidden">
+        {NAV.map((item) => (
+          <Link
+            key={item.to}
+            to={item.to}
             className="whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold text-foreground/80 hover:bg-secondary hover:text-primary"
-            activeClassName="whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold bg-secondary text-primary"
-          />
+            activeProps={{ className: "whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold bg-secondary text-primary" }}
+            activeOptions={{ exact: true }}
+          >
+            {item.label}
+          </Link>
         ))}
       </nav>
     </header>
@@ -116,7 +84,7 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-transparent">
+    <footer id="contato" className="border-t border-border bg-transparent">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr_1fr]">
           <div>
@@ -130,18 +98,14 @@ export function Footer() {
             <h3 className="mt-6 text-2xl font-extrabold">Fale Conosco</h3>
             <p className="mt-2 text-sm text-muted-foreground">Estamos prontos para atender você.</p>
             <nav className="mt-6 flex flex-wrap gap-2">
-              {SECTIONS.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.id);
-                  }}
+              {NAV.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
                   className="rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground/80 hover:bg-secondary hover:text-primary"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -218,5 +182,16 @@ export function FloatingWhatsApp() {
       <WhatsAppIcon className="h-5 w-5" />
       <span className="hidden sm:inline">Fale no WhatsApp</span>
     </a>
+  );
+}
+
+export function PageShell({ children }: { children: React.ReactNode }) {
+  return (
+    <main className="min-h-screen text-foreground" style={{ background: "var(--gradient-institutional)" }}>
+      <Header />
+      {children}
+      <Footer />
+      <FloatingWhatsApp />
+    </main>
   );
 }
