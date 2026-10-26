@@ -117,8 +117,8 @@ export function Footer() {
               </span>
               <div className="min-w-0">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground">E-mail</p>
-                <a href="mailto:atendimento@diferencialcertificado.com.br" className="break-all font-semibold hover:text-primary">
-                  atendimento@diferencialcertificado.com.br
+                <a href="mailto:contato@diferencialcertificado.com.br" className="break-all font-semibold hover:text-primary">
+                  contato@diferencialcertificado.com.br
                 </a>
               </div>
             </li>
